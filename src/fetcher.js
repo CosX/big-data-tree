@@ -21,12 +21,14 @@ const getdatafordaterange = (from, to) => {
 			         aggs: {
 			            fltr: {
 			               terms: {
-			                  field: "country"
+			                  field: "country",
+			                  size: 10
 			               },
 			               aggs: {
 			                  fltr: {
 			                     terms: {
-			                        field: "referer"
+			                        field: "referer",
+			                  		size: 5
 			                     }
 			                  }
 			               }

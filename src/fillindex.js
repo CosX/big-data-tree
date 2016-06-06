@@ -1,15 +1,7 @@
 import constant from './constants';
 import client from './client';
 
-var countries = [
-	"Norway",
-	"Ghana",
-	"England",
-	"USA",
-	"Finland",
-	"Scotland",
-	"Iceland"
-];
+var countries = ["Afghanistan","Albania","Algeria","Andorra","Angola","Anguilla","Antigua &amp; Barbuda","Argentina", "ALALALAL", "ASDQQQWEWQWEWQWE", "QWEFEDFEFEFEFEFEF"];
 
 var lang = [
 	"nb-NO",
@@ -22,7 +14,11 @@ var lang = [
 var ref = [
 	"www.vg.no",
 	"reddit.com",
-	"codepen.io"
+	"codepen.io",
+	"codepen.dv",
+	"g.sd",
+	"e.sd",
+	"gr.sd"
 ];
 
 const sendrandomactivity = () => {

@@ -7,7 +7,7 @@ logger.initialize();
 document.querySelectorAll("button")[0].addEventListener("click", () => {
 	setInterval(()=> {
 		fillindex.sendrandomactivity();
-	}, 200)
+	}, 50)
 });
 
 fetcher.getdatafordaterange(1, 0).then((data) => {
