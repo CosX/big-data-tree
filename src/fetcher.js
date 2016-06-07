@@ -28,7 +28,7 @@ const getdatafordaterange = (from, to) => {
 			                  fltr: {
 			                     terms: {
 			                        field: "referer",
-			                  		size: 5
+			                  		size: 10
 			                     }
 			                  }
 			               }
