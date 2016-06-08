@@ -64,11 +64,28 @@ const drawtree = (data, x1, y1, angle, depth) => {
 			const x2 = x1 + (cos(newangle) * depth * BRANCH_LENGTH);
 			const y2 = y1 + (sin(newangle) * depth * BRANCH_LENGTH);
 			
-			innerdata.animated = {
-				x: innerdata.animated.forthx ? innerdata.animated.x + (index/2) : innerdata.animated.x - (index/2),
-				y: innerdata.animated.forthy ? innerdata.animated.y + (index/2) : innerdata.animated.y - (index/2),
-				forthx: innerdata.animated.x > 10 || innerdata.animated.x < -10 ? !innerdata.animated.forthx : innerdata.animated.forthx,
-				forthy: innerdata.animated.y > 10 || innerdata.animated.y < -10 ? !innerdata.animated.forthy : innerdata.animated.forthy
+			if(innerdata.animated.forthx){
+				innerdata.animated.x += (index/4);
+			} else{
+				innerdata.animated.x -= (index/4);
+			}
+			
+			if(innerdata.animated.x > 10){
+				innerdata.animated.forthx = false;
+			} else if(innerdata.animated.x < -10){
+				innerdata.animated.forthx = true;
+			}
+
+			if(innerdata.animated.forthy){
+				innerdata.animated.y += (index/4);
+			} else{
+				innerdata.animated.y -= (index/4);
+			}
+			
+			if(innerdata.animated.y > 10){
+				innerdata.animated.forthy = false;
+			} else if(innerdata.animated.y < -10){
+				innerdata.animated.forthy = true;
 			}
 
 			drawline( x1, y1, x2, y2, index, depth, innerdata.key + " - " + innerdata.doc_count, innerdata.animated);
@@ -81,7 +98,7 @@ const drawtree = (data, x1, y1, angle, depth) => {
 
 const drawline =  (x1, y1, x2, y2, thickness, depth, str, animate) => {
 	ctx.strokeStyle = '#ecf0f1';
-	const r = 200;
+	const r = 150;
 	let fontsize = 10 * depth;
 
 	if(depth === 1){

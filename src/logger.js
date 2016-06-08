@@ -37,11 +37,6 @@ const fillgeolocation = () => {
     }
 };
 
-const addwaterclick = () => {
-	data.waterclicked++;
-};
-
 export {
-	initialize,
-	addwaterclick
+	initialize
 }
